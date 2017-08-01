@@ -13,7 +13,7 @@ import java.util.List;
 public class relETL {
     public static void main( String[] args ) throws Exception
     {
-        FileReader fileReader = new FileReader("D:\\BaiduYunDownload\\file.txt");
+        FileReader fileReader = new FileReader("/Users/zhzy/Downloads/file.txt");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
 
@@ -21,7 +21,7 @@ public class relETL {
 //        FileOutputStream fileOutputStream = new FileOutputStream(file);
 //        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
 //        BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
-        FileWriter fileWriter = new FileWriter("D:\\ProfessionalSoftware\\batch-import-tool-master\\rel.csv");
+        FileWriter fileWriter = new FileWriter("/Users/zhzy/Documents/graphComputer/rel.csv");
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         bufferedReader.readLine();
         List<String> pathList = new ArrayList<String>();

@@ -1,4 +1,4 @@
-package com.import.neo4j;
+package com.importer.neo4j_import;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

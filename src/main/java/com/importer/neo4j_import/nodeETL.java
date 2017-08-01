@@ -1,14 +1,14 @@
-package com.importer.neo4j;
+package com.importer.neo4j_import;
 
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
 
 /**
- * Hello world!
- *
+ * Created by zhzy on 2017/7/31.
  */
-public class fileETL
-{
+public class nodeETL {
     public static void main( String[] args ) throws Exception
     {
         FileReader fileReader = new FileReader("/Users/zhzy/Downloads/file.txt");
@@ -23,7 +23,7 @@ public class fileETL
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
 
-        String headLine = "l:label\t" + bufferedReader.readLine().replace("fsimage_xg.path", "path:string:PATH");
+        String headLine = bufferedReader.readLine().replace("fsimage_xg.path", "fsimage_xg.path:ID").replace("\t",",");
         bufferedWriter.write(headLine);
         bufferedWriter.newLine();
         while (true){
@@ -31,7 +31,7 @@ public class fileETL
             if(line == null){
                 break;
             }
-            String newLine = "NODE\t" + line;
+            String newLine = line.replace("\t", ",");
             bufferedWriter.write(newLine);
             bufferedWriter.newLine();
         }
